@@ -47,7 +47,7 @@
       <p>{{ eventData.price }}</p>
 
       <p>開催場所</p>
-      <select v-model="eventData.location" multiple>
+      <select v-model="eventData.location">
         <option v-for="location in locations" :key="location">{{ location }}</option>
       </select>
       <p>{{ eventData.location }}</p>
