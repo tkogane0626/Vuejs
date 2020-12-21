@@ -8,13 +8,25 @@
       class="link"
     >Home</router-link>
     <router-link
-      to="/users"
+      :to="{ name: 'users-id-profile', params: { id: 1 }, query: { lang: 'ja', page: 2 }, hash: '#next-user' }"
       active-class="link--active"
       exact=""
       class="link"
-    >Users</router-link>
+    >Users</router-link> 
+    <button @click="increment(2)">+1</button>
+    <button @click="decrement(2)">-1</button>
   </nav>  
 </template>
+
+<script>
+import { mapActions } from "vuex"
+
+export default {
+  methods: {
+    ...mapActions("count", ["increment", "decrement"]),
+  }
+};
+</script>
 
 <style scoped>
 .link {
